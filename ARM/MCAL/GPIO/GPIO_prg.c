@@ -112,3 +112,19 @@ if(PortID < 3 && PinID < 16)
 		}
 	}
 }
+void M_GPIO_void_TogPin(u8 PortID , u8 PinID)
+{
+	switch(PortID)
+	{
+	case PORTA_ID:
+		TOG_BIT(GPIOA_ODR , PinID);
+		break;
+	case PORTB_ID:
+		TOG_BIT(GPIOB_ODR , PinID);
+		break;
+	case PORTC_ID:
+		TOG_BIT(GPIOC_ODR , PinID);
+		break;
+
+	}
+}
